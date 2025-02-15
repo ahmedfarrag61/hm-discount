@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كود خصم H&M</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fff;
+            direction: rtl;
+            position: relative;
+        }
+        .border-frame {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            pointer-events: none;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+        }
+        .border-frame img {
+            width: 40px;
+            opacity: 0.7;
+        }
+        .border-frame img:nth-child(n+2):nth-child(-n+9),
+        .border-frame img:nth-child(n+92):nth-child(-n+100) {
+            justify-self: center;
+        }
+        .border-frame img:nth-child(10n+1),
+        .border-frame img:nth-child(10n) {
+            align-self: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            border: 10px solid red;
+        }
+        .offer-text {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .code-box {
+            font-size: 32px;
+            font-weight: bold;
+            background-color: #f4f4f4;
+            padding: 15px;
+            margin: 20px 0;
+            border: 2px dashed #ccc;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .copy-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="border-frame">
+        <script>
+            for (let i = 0; i < 100; i++) {
+                document.write('<img src="https://upload.wikimedia.org/wikipedia/commons/5/53/H%26M-Logo.svg" alt="H&M Logo">');
+            }
+        </script>
+    </div>
+    <div class="container">
+        <h1 class="offer-text">كود خصم فعال 100% من H&M على كل المنتجات</h1>
+        <h1 class="offer-text">اقوي كود خصم من اتش اند ام</h1>
+        <div class="code-box" id="couponCode">AX0Z</div>
+        <br>
+        <button class="copy-button" onclick="copyCode()">اضغط لنسخ الكود</button>
+    </div>
+
+    <script>
+        function copyCode() {
+            var code = document.getElementById("couponCode").innerText;
+            navigator.clipboard.writeText(code);
+            alert("تم نسخ الكود: " + code);
+        }
+    </script>
+</body>
+</html>
